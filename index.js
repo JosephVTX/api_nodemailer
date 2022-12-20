@@ -1,15 +1,14 @@
-import { App } from "@tinyhttp/app";
-import nodemailer from "nodemailer";
-import express from "express";
-import cors from 'cors'
-import {
+const nodemailer = require("nodemailer")
+const express = require("express")
+const cors = require("cors");
+const {
   SMTP_MAIL_HOST,
   SMTP_MAIL_PASS,
   SMTP_MAIL_RECEIVER,
   SMTP_MAIL_SENDER,
-} from "./config/index.js";
+} = require("./config/index");
 
-const app = new App();
+const app = express()
 
 app.use(express.json(), cors())
 
@@ -46,4 +45,4 @@ app
   })
 
 
-app.listen(3000)
+app.listen(5000)
